@@ -1,10 +1,17 @@
 <header>
     <div class="container">
         <h1 class="title">Josh Mendoza</h1>
-        <div class="navigation">
-            <a routerLink="/">Home</a><br>
-            <a routerLink="/About">About</a><br>
-            <a routerLink="/spotify">Spotify</a><br>
+        <button class="toggle_menu" (click)="toggle_menu()">
+            <i class="fa fa-solid fa-bars"></i>
+        </button>
+        <div class="hello" *ngIf="showMenu">Test
+            <div class="navigation">
+                <ul>
+                    <li><a routerLink="/">Home</a></li>
+                    <li><a routerLink="/About">About</a></li>
+                    <li><a routerLink="/spotify">Spotify</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </header>
