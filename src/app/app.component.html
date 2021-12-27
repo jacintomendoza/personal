@@ -4,12 +4,12 @@
         <button class="toggle_menu" (click)="toggle_menu()">
             <i class="fa fa-solid fa-bars"></i>
         </button>
-        <div class="hello" *ngIf="showMenu">Test
+        <div class="navigation-display" *ngIf="showMenu">
             <div class="navigation">
                 <ul>
-                    <li><a routerLink="/">Home</a></li>
-                    <li><a routerLink="/About">About</a></li>
-                    <li><a routerLink="/spotify">Spotify</a></li>
+                    <li><a routerLink="/" (click)="enable_info()">Home</a></li>
+                    <li><a routerLink="/about" (click)="disable_info()">About</a></li>
+                    <li><a routerLink="/spotify" (click)="disable_info()">Spotify</a></li>
                 </ul>
             </div>
         </div>
@@ -17,17 +17,22 @@
 </header>
 
 <body>
-    <div class="info">
-        <div class="info row1">
-            <H1 class="welcome">Welcome to my personal page!</H1>
-        </div>
-        
-        <div class="info row2">
-            <img class="profile_img" src="assets/img/profile.jpg" alt="profile">
+    <div *ngIf="showInfo">
+        <div class="hero">
+            <div class="info">
+                <div class="info row1">
+                    <H1 class="welcome">Welcome to my personal page!</H1>
+                </div>
+                
+                <div class="info row2">
+                    <img class="profile_img" src="assets/img/profile.jpg" alt="profile">
 
-            <p class="description">You are probably finding this from Instagram, just know this is a work in progess! (:  I am creating this website from scratch and am excited to see where this goes!  Feel free to click on the links above and look around.</p>
+                    <p class="description">You are probably finding this from Instagram, just know this is a work in progess! (:  I am creating this website from scratch and am excited to see where this goes!  Feel free to click on the links above and look around.</p>
+                </div>
+            </div>
         </div>
     </div>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus maxime accusamus et veniam magnam iusto doloremque dolor ad a rem? Molestias consequatur ea aliquid aut molestiae minus odio atque voluptatum.
 </body>
 
 <router-outlet></router-outlet>
